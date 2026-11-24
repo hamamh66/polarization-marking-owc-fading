@@ -1,0 +1,8 @@
+{
+  "title": "Polarization marking against coherent inter-beam fading: reproducible code",
+  "upload_type": "software",
+  "description": "Reproducible notebook and results for the article 'When Does Polarization Marking Suppress Coherent Inter-Beam Fading? Path Distinguishability and Propagated-Field Regimes for Multi-Beam SLM Transmitters'.",
+  "creators": [{"name": "Hamam, Habib", "affiliation": "Université de Moncton"}],
+  "license": "MIT",
+  "keywords": ["polarization", "coherent interference", "spatial light modulator", "fade floor", "optical wireless"]
+}
