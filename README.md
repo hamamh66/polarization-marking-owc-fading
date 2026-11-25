@@ -8,23 +8,25 @@ A multi-beam transmitter built on a phase-only spatial light modulator (SLM) ser
 
 | File | Purpose |
 |---|---|
-| `owc_marking.ipynb` | Executed notebook reproducing every number, table and figure (Figs. 2–5) |
+| `owc_marking.ipynb` | Executed notebook reproducing every number, table and figure (Figs. 2–6) |
 | `schematic.py` | Draws the transmitter overview figure (Fig. 1) |
 | `results/owc_results.json` | All numerical results written by the notebook |
 | `results/fig_*.pdf, .png` | Figures written by the notebook |
+| `results/design_maps.npz` | Local and fixed-assignment floors at held-out receiver positions |
 
 ## What the notebook computes
 
 1. Fade floors of structured two-dimensional marker sets (coherent, trine, H/V/D/R, tetrahedral, grouping).
-2. A branch-and-bound certificate for the tetrahedral floor 4 − 2√3.
-3. A global search for the largest fade floor over all two-dimensional marker sets for three and four beams.
+2. A branch-and-bound numerical check of the tetrahedral floor 4 − 2√3, and an exhaustive check of the optimal H/V labelling formula for arbitrary amplitudes.
+3. A multistart numerical search for the largest fade floor over all two-dimensional marker sets for three and four beams.
 4. A propagated-field model of the transmitter: pixelated phase-only SLM (1500 × 1500 pixels, 8 µm pitch, 8-bit phase, 93 % fill factor, zero-order leakage), afocal relay (angular magnification 5) and Fresnel propagation over 2 m.
-5. Segmented transmitter: marker-assignment objectives, variance identity check, phase-independent fade certificate, receiver-aperture sweep, coverage-wide statistics, phase dithering, marker tolerances and a source-linewidth regime map, all on held-out positions and phases.
+5. Segmented transmitter: marker-assignment objectives, variance identity check, phase-independent fade certificate, receiver-aperture sweep (pupil integrals by polar quadrature), coverage-wide statistics, phase dithering at matched observation time, marker tolerances and a source-linewidth regime map, all on held-out positions and phases.
 6. Full-aperture (multi-spot hologram) transmitter, coherent and polarization-multiplexed at matched launch power.
+7. Design benchmarks: best local H/V floor versus one fixed assignment on square and triangular cell layouts; audits of segment phases applied before quantization and of a two-branch, single-polarization full-aperture control.
 
 ## Running
 
-Python 3 with `numpy`, `scipy` and `matplotlib` (the first cell installs them). Open the notebook in Jupyter or Google Colab and run all cells. Seeds are fixed. A full run takes about 30 minutes on two CPU cores; results go to `results/`.
+Python 3 with `numpy`, `scipy` and `matplotlib` (the first cell installs them). Open the notebook in Jupyter or Google Colab and run all cells. Seeds are fixed. A full run takes about 50 minutes on two CPU cores; results go to `results/`.
 
 ## License
 
